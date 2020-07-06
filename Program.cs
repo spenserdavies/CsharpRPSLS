@@ -8,6 +8,7 @@ namespace RockPaperScissors
     {
         static void Main(string[] args)
         {
+            Console.Title = "Rock Paper BitchSlap";
             Console.ForegroundColor = ConsoleColor.Black;
             Console.BackgroundColor = ConsoleColor.DarkCyan;
             bool playing = false;
@@ -25,7 +26,32 @@ namespace RockPaperScissors
             Console.WriteLine("\nWhats Your Name?");
             Console.WriteLine("");
             string name = Console.ReadLine();
+            string lowerName = name.ToLower();
             playing = true;
+            if(lowerName =="droids"){
+                Console.Clear();
+                Console.WriteLine("We Dont Serve Your Kind");
+                Console.WriteLine(@"         
+                             .-.
+                            /_ _\
+                            |o^o|
+                            \ _ /
+                           .-'-'-.
+                         /`)  .  (`\
+                        / /|.-'-.|\ \
+                        \ \| (_) |/ /  .-``-.
+                         \_\'-.-'/_/  /[] _ _\
+                         /_/ \_/ \_\ _|_o_LII|_
+                           |'._.'|  / | ==== | \
+                           |  |  |  |_| ==== |_|
+                            \_|_/    ||' ||  ||
+                            |-|-|    ||LI  o ||
+                            |_|_|    ||'----'||
+---------------------------/_/ \_\  /__|    |__\-------------
+               ----------#########################-----------");
+                Thread.Sleep(6000);
+                playing = false;
+            }
 
             int wins = 0;
             int loses = 0;
@@ -34,22 +60,29 @@ namespace RockPaperScissors
             Console.Clear();
             #region //Hi, lets play....
             Console.WriteLine($"\nHi {name}!");
-            Console.WriteLine("\nLets Play Rock-Paper-Scissors-Lizard-Spock..");
-            #endregion
             while (playing)
             {
+            Console.WriteLine("\nLets Play Rock-Paper-Scissors-Lizard-Spock..");
+            #endregion
                 #region //Choose....
-                Console.WriteLine(" -----------------------------------");
-                Console.WriteLine("|                                   |");
-                Console.WriteLine("| C H O O S E Y O U R F I G H T E R |");
-                Console.WriteLine("|                                   |");
-                Console.WriteLine(" -----------------------------------");
-                Console.WriteLine("|   rock   |   paper   |  scissors  |");
-                Console.WriteLine(" -----------------------------------");
-                Console.WriteLine("|     lizard     |       spock      |");
-                Console.WriteLine(" -----------------------------------");
+                Console.WriteLine("\n ");
+                Console.WriteLine("          -----------------------------------");
+                Console.WriteLine("         |                                   |");
+                Console.WriteLine("         | C H O O S E Y O U R F I G H T E R |");
+                Console.WriteLine("         |                                   |");
+                Console.WriteLine("          -----------------------------------");
+                Console.WriteLine("         |   rock   |   paper   |  scissors  |");
+                Console.WriteLine("          -----------------------------------");
+                Console.WriteLine("         |     lizard     |       spock      |");
+                Console.WriteLine("          -----------------------------------");
+                Console.WriteLine("         | you chose:                        |");
+                Console.WriteLine("          -----------------------------------");
+                Console.WriteLine("\n ");
+                Console.SetCursorPosition(23, 15);
 
+                Console.ForegroundColor = ConsoleColor.White;
                 string choice = Console.ReadLine().ToLower();
+                Console.ForegroundColor = ConsoleColor.Black;
                 #endregion
                 if (moves.ContainsKey(choice))
                 {
